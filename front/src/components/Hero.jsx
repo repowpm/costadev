@@ -156,7 +156,7 @@ const Hero = () => {
             scale: 1.05,
             transition: { duration: 0.2 }
           }}
-          className="group cursor-pointer inline-flex items-center px-4 py-2 bg-blue-600/90 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-8 border border-blue-500/50 hover:bg-blue-700/90 hover:border-blue-400/70 transition-all duration-300 shadow-lg hover:shadow-xl"
+          className="group cursor-pointer inline-flex items-center px-4 py-2 bg-blue-600/90 backdrop-blur-sm text-white rounded-full text-sm font-medium mt-4 border border-blue-500/50 hover:bg-blue-700/90 hover:border-blue-400/70 transition-all duration-300 shadow-lg hover:shadow-xl relative z-10"
         >
           <span className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse group-hover:bg-blue-200 transition-colors duration-300"></span>
           Disponible para nuevos proyectos
