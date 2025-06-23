@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer';
 
 // Función para crear transporter de email
 const createEmailTransporter = () => {
-  return nodemailer.createTransporter({
+  return nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
     port: parseInt(process.env.EMAIL_PORT),
     secure: process.env.EMAIL_SECURE === 'true',
@@ -11,19 +11,7 @@ const createEmailTransporter = () => {
       user: process.env.CONTACT_EMAIL_USER,
       pass: process.env.CONTACT_EMAIL_PASS
     },
-    tls: {
-      rejectUnauthorized: false,
-      ciphers: 'SSLv3'
-    },
-    socketTimeout: parseInt(process.env.EMAIL_TIMEOUT) || 30000,
-    connectionTimeout: parseInt(process.env.EMAIL_TIMEOUT) || 30000,
-    greetingTimeout: parseInt(process.env.EMAIL_TIMEOUT) || 30000,
-    pool: false,
-    maxConnections: 1,
-    maxMessages: parseInt(process.env.EMAIL_RATE_LIMIT) || 3,
-    rateLimit: parseInt(process.env.EMAIL_RATE_LIMIT) || 3,
-    rateDelta: parseInt(process.env.EMAIL_RATE_DELTA) || 1000,
-    family: 4, // Forzar IPv4
+    // Opciones de seguridad y conexión eliminadas para usar los valores por defecto modernos y seguros de Nodemailer.
     debug: process.env.NODE_ENV === 'development',
     logger: process.env.NODE_ENV === 'development'
   });
