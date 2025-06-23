@@ -51,7 +51,8 @@ const Contact = () => {
     );
 
     try {
-      await axios.post('http://localhost:5000/api/contact', data);
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      await axios.post(`${apiUrl}/api/contact`, data);
       
       // Actualizamos a la notificación de éxito
       toast.custom(
