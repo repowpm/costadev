@@ -37,7 +37,7 @@ const contactSchema = new mongoose.Schema({
     type: String,
     required: [true, 'El mensaje es requerido'],
     trim: true,
-    minlength: [10, 'El mensaje debe tener al menos 10 caracteres'],
+    minlength: [3, 'El mensaje debe tener al menos 3 caracteres'],
     maxlength: [1000, 'El mensaje no puede exceder 1000 caracteres']
   },
   budget: {
@@ -73,4 +73,4 @@ contactSchema.index({ createdAt: -1 });
 
 const Contact = mongoose.model('Contact', contactSchema);
 
-export default Contact; 
+export default Contact;
