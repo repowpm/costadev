@@ -635,7 +635,7 @@ const Footer = () => {
     );
 
     try {
-      await axios.post('http://localhost:5000/api/newsletter/subscribe', { email });
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/newsletter/subscribe`, { email });
 
       toast.custom(
         (t) => (
@@ -867,4 +867,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Footer;
